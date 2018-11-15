@@ -1,21 +1,38 @@
-#test
-#test2
-]$ rez-env requests-2.2+ python-2.6 'pymongo-0+<2.7'
-
-You are now in a rez-configured environment.
-
-resolved by ajohns@nn188.somewhere.com, on Wed Feb 26 15:56:20 2014, using Rez v2.0.0
+--------------------------------------------------------------------------------
+Building hello_world-1.0.0...
+--------------------------------------------------------------------------------
+Resolving build environment: python
+resolved by ajohns@workstation.local, on Sun Jul 31 14:39:33 2016, using Rez v2.0.rc1.44
 
 requested packages:
-requests-2.2+
-python-2.6
-pymongo-0+<2.7
+python
+~platform==osx    (implicit)
+~arch==x86_64     (implicit)
+~os==osx-10.11.5  (implicit)
 
 resolved packages:
-python-2.6.8    /software/ext/python/2.6.8
-platform-linux  /software/ext/platform/linux
-requests-2.2.1  /software/ext/requests/2.2.1/python-2.6
-pymongo-2.6.3   /software/ext/pymongo/2.6.3
-arch-x86_64     /software/ext/arch/x86_64
+arch-x86_64     /home/ajohns/packages/arch/x86_64                                            (local)
+os-osx-10.11.5  /home/ajohns/packages/os/osx-10.11.5                                         (local)
+platform-osx    /home/ajohns/packages/platform/osx                                           (local)
+python-2.7.11   /home/ajohns/packages/python/2.7.11/platform-osx/arch-x86_64/os-osx-10.11.5  (local)
 
-> ]$ _
+Invoking cmake build system...
+Executing: /usr/local/bin/cmake -d /home/ajohns/workspace/rez/example_packages/hello_world -Wno-dev -DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=TRUE -D_ECLIPSE_VERSION=4.3 --no-warn-unused-cli -DCMAKE_INSTALL_PREFIX=/home/ajohns/packages/hello_world/1.0.0 -DCMAKE_MODULE_PATH=${CMAKE_MODULE_PATH} -DCMAKE_BUILD_TYPE=Release -DREZ_BUILD_TYPE=local -DREZ_BUILD_INSTALL=1 -G Unix Makefiles
+Not searching for unused variables given on the command line.
+-- Could NOT find PkgConfig (missing:  PKG_CONFIG_EXECUTABLE)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ajohns/workspace/rez/example_packages/hello_world/build
+
+Executing: make -j4
+[100%] Built target py
+
+Executing: make -j4 install
+[100%] Built target py
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/ajohns/packages/hello_world/1.0.0/./python/hello_world.py
+-- Installing: /home/ajohns/packages/hello_world/1.0.0/./python/hello_world.pyc
+-- Installing: /home/ajohns/packages/hello_world/1.0.0/./bin/hello
+
+All 1 build(s) were successf
